@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const productosRouter = require("./routes/products")
 
+const db = require("./databases/mongoose")
+
 
 var app = express();
 
@@ -40,6 +42,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
+
+
 
 app.listen(3000, ()=>{
   console.log("servidor puerto 3000")
